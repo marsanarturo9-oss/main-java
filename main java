@@ -1,0 +1,57 @@
+class Estudiante {
+
+    // Atributos del estudiante
+    private String nombre;
+    private String matricula;
+    private double calificacion;
+
+    // Constructor: inicializa los datos
+    public Estudiante(String nombre, String matricula,
+                      double calificacion) {
+        this.nombre = nombre;
+        this.matricula = matricula;
+        this.calificacion = calificacion;
+    }
+
+    // Muestra la informacion del estudiante
+    public void mostrarDatos() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Matricula: " + matricula);
+        System.out.println("Calificacion: " + calificacion);
+    }
+
+    // Determina si aprobo o reprobo
+    public String obtenerResultado() {
+        if (calificacion >= 70) {
+            return "Aprobado";
+        } else {
+            return "Reprobado";
+        }
+    }
+}
+
+// Clase principal del programa
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Crear dos objetos de tipo Estudiante
+        Estudiante estudiante1 =
+            new Estudiante("Carlos Lopez", "A001", 90);
+
+        Estudiante estudiante2 =
+            new Estudiante("Maria Garcia", "A002", 65);
+
+        // Mostrar datos del primer estudiante
+        System.out.println("=== ESTUDIANTE 1 ===");
+        estudiante1.mostrarDatos();
+        System.out.println("Resultado: "
+            + estudiante1.obtenerResultado());
+
+        // Mostrar datos del segundo estudiante
+        System.out.println("\n=== ESTUDIANTE 2 ===");
+        estudiante2.mostrarDatos();
+        System.out.println("Resultado: "
+            + estudiante2.obtenerResultado());
+    }
+}
